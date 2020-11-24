@@ -12,13 +12,13 @@
 int main() {
 	char c;
 	short unit;
-	float value;
-	float out_value;
+	double value;
+	double out_value;
 	printf("Input unit of measurements\n 1- for decimeters\n 2- for kilometers\n 3- for meters\n 4- for millimeters\n 5- for cenntimeters\n");
 	scanf_s("%i", &unit);
 	printf("Input unit\'s value:\n");
-	scanf_s("%f", &value);
-	fflush(stdin);
+	scanf_s("%le", &value);
+	
 	switch (unit) {
 	case DECIMETER:
 		out_value = value;
@@ -38,9 +38,11 @@ int main() {
 		break;
 	default:
 		printf_s("There no such unit that represents input number.");
+		out_value = 0;
 		break;
 	}
-	printf("Output: %f", out_value);
+	printf("Output: %e", out_value);
+	fflush(stdin);
 	scanf_s("%d", &c);
 	return 0;
 }
