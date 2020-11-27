@@ -10,19 +10,17 @@
 #define  CENTIMETER (5)
 
 int main() {
-	char c;
-	short unit;
-	double value;
-	double out_value;
+	int unit;
+	double value = 0;
+	double out_value = 0;
 	printf("Input unit of measurements\n 1- for decimeters\n 2- for kilometers\n 3- for meters\n 4- for millimeters\n 5- for cenntimeters\n");
-	scanf_s("%i", &unit);
+	scanf_s("%d", &unit);
 	printf("Input unit\'s value:\n");
 	scanf_s("%le", &value);
 	
 	switch (unit) {
 	case DECIMETER:
 		out_value = value;
-
 		break;
 	case KILOMETER:
 		out_value = value * 1000;
@@ -42,7 +40,5 @@ int main() {
 		break;
 	}
 	printf("Output: %e", out_value);
-	fflush(stdin);
-	scanf_s("%d", &c);
 	return 0;
 }
